@@ -3,6 +3,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'dracula/vim'
 Plug 'Raimondi/delimitMate'
 Plug 'sheerun/vim-polyglot'
+Plug 'vim-airline/vim-airline'
 
 call plug#end()
 
