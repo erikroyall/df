@@ -14,6 +14,8 @@
 font pango:IBM Plex Mono Text 12
 
 # i3-gaps
+smart_gaps on
+focus_follows_mouse off
 gaps inner 10
 gaps outer 0
 
@@ -46,14 +48,19 @@ bindsym $mod+Return exec alacritty
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+space exec rofi -show run
 bindsym $mod+d exec "rofi -show drun"
 bindsym $mod+Ctrl+b exec brightness-controller
+bindsym XF86AudioRaiseVolume exec amixer -D pulse -q set Master 5%+ unmute && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec amixer -D pulse -q set Master 5%- unmute && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMute exec amixer -D pulse && pkill -RTMIN+10 i3blocks
+bindsym XF86MonBrightnessUp exec light -A 1
+bindsym XF86MonBrightnessDown exec light -U 1
+bindsym $mod+z exec scrot
+bindsym $mod+Ctrl+l exec "~/scripts/lock -gpf Inconsolata -t 'If you are reading this, you probably should not be using this computer'"
+
+bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+bindsym --release Num_Lock exec pkill -SIGRTMIN+11 i3blocks
 
 # change focus
 bindsym $mod+$left focus left
@@ -172,7 +179,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+        status_command SCRIPT_DIR=~/.config/i3/blocks i3blocks
 }
 
 exec_always feh --bg-scale ~/Pictures/wallpaper.png
