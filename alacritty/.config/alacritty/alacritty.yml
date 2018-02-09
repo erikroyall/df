@@ -64,12 +64,12 @@ font:
     style: Regular
 
   bold:
-    family: Inconsolata
+    family: IBM Plex Mono Text
     style: Bold
 
   # The italic font face
   italic:
-    family: monospace # should be "Menlo" or something on macOS.
+    family: IBM Plex Mono Text # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
     # style: Italic
 
@@ -105,7 +105,7 @@ custom_cursor_colors: false
 colors:
   # Default colors
   primary:
-    background: '0x282a36'
+    background: '0x000000'
     foreground: '0xf8f8f2'
 
   # Normal colors
@@ -157,7 +157,7 @@ visual_bell:
   duration: 0
 
 # Background opacity
-background_opacity: 0.95
+background_opacity: 1.0
 
 # Mouse bindings
 #
