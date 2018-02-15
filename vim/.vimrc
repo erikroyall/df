@@ -21,8 +21,7 @@ color dracula
 set noshowmode
 set number
 set linebreak
-set showbreak=+++
-set textwidth=100
+"set showbreak=+++
 set showmatch
 set hlsearch
 set smartcase
@@ -37,3 +36,6 @@ set expandtab
 set ruler
 set undolevels=1000
 set backspace=indent,eol,start
+
+au BufRead,BufNewFile *.asm set filetype=nasm
+
